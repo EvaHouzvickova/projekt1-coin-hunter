@@ -7,3 +7,8 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 
 // sem začni psát svůj program
+
+let figurka = document.getElementById('panacek');
+let startovniPozice = 
+figurka.style.top = "50%";
+figurka.style.left = "50%";
