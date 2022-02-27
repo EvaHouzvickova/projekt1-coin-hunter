@@ -10,8 +10,8 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 let figurka = document.getElementById('panacek');
 let startovniPozice = 
-figurka.style.top = "20px";
-figurka.style.left = "20px";
+figurka.style.top = parseInt(window.innerHeight/2) + "px";
+figurka.style.left = parseInt(window.innerWidth/2) + "px";;
 
 let pohyb = 20;
 
