@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body onkeydown='pohybPanacka(event)' onload='generatorMince()'>
+<body onkeydown='pohybPanacka(event)' onload='generatorPoziceMince()'>
 
 
 	<img id="panacek" src="obrazky/panacek.png" alt="Panáček">
@@ -18,11 +18,11 @@
 
 	<div id="score">0</div>
 
-	<audio id="hudba" src="zvuky/hudba.mp3" autoplay loop></audio>
+	<audio id="hudba" src="zvuky/hudba.mp3"></audio>
 	
-	<!-- <audio id="zvukmince" src="zvuky/mince.mp3"></audio>
+	<audio id="zvukmince" src="zvuky/mince.mp3"></audio>
 
-	<audio id="zvukfanfara" src="zvuky/fanfara.mp3"></audio>-->
+	<audio id="zvukfanfara" src="zvuky/fanfara.mp3"></audio>
 
 	<script src="main.js"></script>
 </body>
