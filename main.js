@@ -29,6 +29,8 @@ panacek.style.top = panacekY + "px";//vychozí pozice panáčka
 panacek.style.left = panacekX + "px";
 
 function generatorPoziceMince() {
+	minceY = Math.floor((Math.random() * window.innerHeight) + 1);
+	minceX = Math.floor((Math.random() * window.innerWidth) + 1);
 	mince.style.top = minceY + "px";
 	mince.style.left = minceX + "px";
 }
