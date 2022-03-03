@@ -17,6 +17,8 @@ let panacekVyska = 70;
 let pohyb = 20;
 
 let mince = document.getElementById('mince');
+minceY = Math.floor(Math.random() * window.innerHeight);
+minceX = Math.floor(Math.random() * window.innerWidth);
 let minceSirka = 36;
 let minceVyska = 36;
 
@@ -28,15 +30,6 @@ function generatorMince() {
 	minceX = Math.floor(Math.random() * window.innerWidth);
 	mince.style.top = minceY + "px";
 	mince.style.left = minceX + "px";
-}
-
-function panacekSebralMinci() {
-	if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
-		minceY = Math.floor(Math.random() * window.innerHeight);
-		minceX = Math.floor(Math.random() * window.innerWidth);
-		mince.style.top = minceY + "px";
-		mince.style.left = minceX + "px";	
-	}
 }
 
 function pohybPanacka(event) {
@@ -55,5 +48,14 @@ function pohybPanacka(event) {
 	} if (event.keyCode === 39 && (parseInt(panacekX) - pohyb) <= window.innerWidth) {//keyright
 		panacek.src = "obrazky/panacek-vpravo.png";
 		panacek.style.left = parseInt(panacekX) + pohyb + "px";
+	}
+}
+
+function panacekSebralMinci() {
+	if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
+		minceY = Math.floor(Math.random() * window.innerHeight);
+		minceX = Math.floor(Math.random() * window.innerWidth);
+		mince.style.top = minceY + "px";
+		mince.style.left = minceX + "px";	
 	}
 }
