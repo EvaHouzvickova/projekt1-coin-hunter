@@ -17,8 +17,6 @@ let panacekVyska = 70;
 let pohyb = 20;
 
 let mince = document.getElementById('mince');
-minceY = Math.floor(Math.random() * window.innerHeight);
-minceX = Math.floor(Math.random() * window.innerWidth);
 let minceSirka = 36;
 let minceVyska = 36;
 
