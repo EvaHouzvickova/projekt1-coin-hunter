@@ -21,9 +21,12 @@ let minceY = Math.floor((Math.random() * window.innerHeight) + 1);
 let minceX = Math.floor((Math.random() * window.innerWidth) + 1);
 
 let hudba = document.getElementById('hudba');
-hudba.play();
-
 let zvukMince = document.getElementById('zvukmince');
+let fanfaraVitez = document.getElementById('zvukfanfara');
+
+let skore = document.getElementById('score');
+let pocitadloMinci = 0;
+console.log(pocitadloMinci);
 
 function vychoziPozicePanacka() { //vychozí pozice panáčka
 	panacek.style.top = panacekY + "px";
@@ -40,11 +43,23 @@ function generatorPoziceMince() { //random pozice mince
 function priNacteniStranky() {
 	vychoziPozicePanacka()
 	generatorPoziceMince()
+	hudba.play();
+}
+
+function vitez() {
+	if ( pocitadloMinci >= 5) {
+		hudba.pause();
+		fanfaraVitez.play();
+		alert("Vyhrál si, gratulujeme. Chceš hrát znovu?");
+	}
 }
 
 function panacekSebralMinci() { 
 		generatorPoziceMince();
 		zvukMince.play();	
+		++pocitadloMinci;
+		skore.textContent = pocitadloMinci;
+		vitez();
 	}
 
 function pohybPanacka(event) {
@@ -68,3 +83,4 @@ function pohybPanacka(event) {
 		panacekSebralMinci();
 	}
 }
+
