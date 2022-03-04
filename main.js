@@ -25,14 +25,21 @@ hudba.play();
 
 let zvukMince = document.getElementById('zvukmince');
 
-panacek.style.top = panacekY + "px";//vychozí pozice panáčka
-panacek.style.left = panacekX + "px";
+function vychoziPozicePanacka() { //vychozí pozice panáčka
+	panacek.style.top = panacekY + "px";
+	panacek.style.left = panacekX + "px";
+}
 
-function generatorPoziceMince() {
+function generatorPoziceMince() { //random pozice mince
 	minceY = Math.floor((Math.random() * window.innerHeight) + 1);
 	minceX = Math.floor((Math.random() * window.innerWidth) + 1);
 	mince.style.top = minceY + "px";
 	mince.style.left = minceX + "px";
+}
+
+function priNacteniStranky() {
+	vychoziPozicePanacka()
+	generatorPoziceMince()
 }
 
 function panacekSebralMinci() { 
