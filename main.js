@@ -40,7 +40,7 @@ function generatorPoziceMince() { //random pozice mince
 	mince.style.left = minceX + "px";
 }
 
-function priNacteniStranky() {
+function priNacteniStranky() { 
 	vychoziPozicePanacka()
 	generatorPoziceMince()
 	hudba.play();
@@ -59,7 +59,8 @@ function vitez() {
 function panacekSebralMinci() { 
 		generatorPoziceMince();
 		zvukMince.play();	
-		++pocitadloMinci;
+		++pocitadloMinci; //při sebrání mince přičítáme
+		console.log(pocitadloMinci);
 		skore.textContent = pocitadloMinci;
 		vitez();
 	}
@@ -81,7 +82,7 @@ function pohybPanacka(event) {
 	} if (event.keyCode === 39 && (parseInt(panacekX) - pohyb) <= window.innerWidth) {//keyright
 		panacek.src = "obrazky/panacek-vpravo.png";
 		panacek.style.left = parseInt(panacekX) + pohyb + "px";
-	} if (!(parseInt(panacekX) + panacekSirka < minceX || minceX + minceSirka < parseInt(panacekX) || parseInt(panacekY) + panacekVyska < minceY || minceY + minceVyska < parseInt(panacekY))) {
+	} if (!(parseInt(panacekX) + panacekSirka < minceX || minceX + minceSirka < parseInt(panacekX) || parseInt(panacekY) + panacekVyska < minceY || minceY + minceVyska < parseInt(panacekY))) { //prekryti panacka a mince
 		panacekSebralMinci();
 	}
 }
