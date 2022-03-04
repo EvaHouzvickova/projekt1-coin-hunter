@@ -50,7 +50,9 @@ function vitez() {
 	if ( pocitadloMinci >= 5) {
 		hudba.pause();
 		fanfaraVitez.play();
-		alert("Vyhrál si, gratulujeme. Chceš hrát znovu?");
+		if(!alert("Vyhrál si, gratulujeme. Chceš hrát znovu?")){
+		window.location.reload();
+		}
 	}
 }
 
