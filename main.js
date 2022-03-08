@@ -68,7 +68,7 @@ function pohybPanacka(event) {
 	let panacekY = panacek.style.top;
 	let panacekX = panacek.style.left;
 
-	//hudba.play();
+	hudba.play();
 
 	if (event.keyCode === 40 && (parseInt(panacekY) + pohyb) <= window.innerHeight) { //keydown
 		panacek.src = "obrazky/panacek.png";
