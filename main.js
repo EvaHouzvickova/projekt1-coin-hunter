@@ -10,13 +10,13 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 let panacek = document.getElementById('panacek');
 let panacekY = window.innerHeight / 2;
 let panacekX = window.innerWidth / 2;
-let panacekSirka = 64;
-let panacekVyska = 70;
+let panacekSirka = panacek.width;
+let panacekVyska = panacek.height;
 let pohyb = 20;
 
 let mince = document.getElementById('mince');
-let minceSirka = 36;
-let minceVyska = 36;
+let minceSirka = mince.width;
+let minceVyska = mince.height;
 let minceY = Math.floor((Math.random() * window.innerHeight) + 1);
 let minceX = Math.floor((Math.random() * window.innerWidth) + 1);
 
@@ -43,14 +43,13 @@ function generatorPoziceMince() { //random pozice mince
 function priNacteniStranky() { 
 	vychoziPozicePanacka()
 	generatorPoziceMince()
-	hudba.play();
 }
 
 function vitez() {
 	if ( pocitadloMinci >= 5) {
 		hudba.pause();
 		fanfaraVitez.play();
-		if(!alert("Vyhrál si, gratulujeme. Chceš hrát znovu?")){
+		if(confirm("Vyhrál si, gratulujeme. Chceš hrát znovu?")){
 		window.location.reload();
 		}
 	}
@@ -68,6 +67,8 @@ function panacekSebralMinci() {
 function pohybPanacka(event) {
 	let panacekY = panacek.style.top;
 	let panacekX = panacek.style.left;
+
+	//hudba.play();
 
 	if (event.keyCode === 40 && (parseInt(panacekY) + pohyb) <= window.innerHeight) { //keydown
 		panacek.src = "obrazky/panacek.png";
